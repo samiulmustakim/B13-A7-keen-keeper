@@ -1,4 +1,3 @@
-import React from "react";
 import { useParams } from "react-router";
 import usePeople from "../../hooks/usePeople";
 import { PacmanLoader } from "react-spinners";
@@ -8,6 +7,8 @@ import { FiArchive } from "react-icons/fi";
 import { MdOutlineDeleteOutline } from "react-icons/md";
 import { PiChatCircleTextBold, PiPhoneCall } from "react-icons/pi";
 import { LuVideo } from "react-icons/lu";
+import { FriendContactContext } from "../../contextApi/FriendContactContext";
+import { useContext } from "react";
 
 const FriendDetails = () => {
     const { id } = useParams();
@@ -28,9 +29,18 @@ const FriendDetails = () => {
             </div>
         );
     }
+    
+    
+    const { call, setCall, message, setMessage, video, setVideo } = useContext(FriendContactContext)
 
-    const handleTimeLine = () => {
-        
+    const handleTimeLineCall = () => {
+        setCall([...call, expectedFriend])
+    }
+    const handleTimeLineMessage = () => {
+        setMessage([...message, expectedFriend])
+    }
+    const handleTimeLineVideo = () => { 
+        setVideo([...video, expectedFriend])
     }
 
     return (
@@ -128,17 +138,17 @@ const FriendDetails = () => {
                     <div className="bg-white rounded-md shadow-md p-6">
                         <p className="text-gray-600 font-semibold text-xl pb-4">Quick Check-In</p>
                         <div className="grid md:grid-cols-2 grid-cols-3 lg:grid-cols-3 gap-5">
-                            <button onClick={handleTimeLine} className="bg-gray-100 border border-gray-300 rounded-xl flex flex-col p-4 justify-center items-center">
+                            <button onClick={handleTimeLineCall} className="bg-gray-100 border border-gray-300 rounded-xl cursor-pointer flex flex-col p-4 justify-center items-center">
                                 <PiPhoneCall className="text-4xl"/>
                                 <p className="font-semibold pt-2">Call</p>
                             </button>
 
-                            <button onClick={handleTimeLine} className="bg-gray-100 border border-gray-300 rounded-xl flex flex-col p-4 justify-center items-center">
+                            <button onClick={handleTimeLineMessage} className="bg-gray-100 cursor-pointer border border-gray-300 rounded-xl flex flex-col p-4 justify-center items-center">
                                 <PiChatCircleTextBold className="text-4xl"/>
                                 <p className="font-semibold pt-2">Text</p>
                             </button>
-                            
-                            <button onClick={handleTimeLine} className="bg-gray-100 border border-gray-300 rounded-xl flex flex-col p-4 justify-center items-center">
+
+                            <button onClick={handleTimeLineVideo} className="bg-gray-100 cursor-pointer border border-gray-300 rounded-xl flex flex-col p-4 justify-center items-center">
                                 <LuVideo className="text-4xl"/>
                                 <p className="font-semibold pt-2">Video</p>
                             </button>

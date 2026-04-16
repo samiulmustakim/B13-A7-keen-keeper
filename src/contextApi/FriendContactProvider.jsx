@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
+import { FriendContactContext } from './FriendContactContext';
 
-const FriendContactProvider = () => {
+const FriendContactProvider = ({children}) => {
 
-    const [call, setCall] = useState('')
+    const [call, setCall] = useState([])
+    const [message, setMessage] = useState([])
+    const [video, setVideo] = useState([])
 
-    return (
-        {}
-    );
+    const data = {
+         call, setCall, message, setMessage, video, setVideo
+    }
+
+    return <FriendContactContext.Provider value={data}>{children}</FriendContactContext.Provider>;
 };
 
 export default FriendContactProvider;
