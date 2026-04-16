@@ -31,16 +31,16 @@ const FriendDetails = () => {
     }
     
     
-    const { call, setCall, message, setMessage, video, setVideo } = useContext(FriendContactContext)
+    const { timeline, setTimeline } = useContext(FriendContactContext)
 
     const handleTimeLineCall = () => {
-        setCall([...call, expectedFriend])
+        setTimeline([...timeline,{...expectedFriend, type: "call"}])
     }
     const handleTimeLineMessage = () => {
-        setMessage([...message, expectedFriend])
+        setTimeline([...timeline, {...expectedFriend, type: "message"}])
     }
     const handleTimeLineVideo = () => { 
-        setVideo([...video, expectedFriend])
+        setTimeline([...timeline, {...expectedFriend, type: "video"}])
     }
 
     return (
