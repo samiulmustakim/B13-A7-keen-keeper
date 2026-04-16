@@ -1,11 +1,13 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { FriendContactContext } from "../../contextApi/FriendContactContext";
 import callimg from "../../assets/Call.png";
 import messageimg from "../../assets/Message.png";
 import videoimg from "../../assets/video.png";
+import { IoMdArrowDropdown } from "react-icons/io";
 
 const Timeline = () => {
     const { timeline } = useContext(FriendContactContext);
+    const [filter, setFilter] = useState("all");
 
     const typeConfig = {
         call: { img: callimg, label: "Call" },
@@ -13,11 +15,42 @@ const Timeline = () => {
         video: { img: videoimg, label: "Video" },
     };
 
+    const filterTimeline =
+        filter === "all"
+            ? timeline
+            : timeline.filter((item) => item.type === filter);
+
     return (
-        <div className="container mx-auto py-10 space-y-3">
+        <div className="container mx-auto py-14 space-y-4 px-4">
+            <h1 className="text-5xl font-bold text-[#244d3f]">Timeline </h1>
+
+            <div className="dropdown dropdown-bottom pb-3">
+                <div
+                    tabIndex={0}
+                    role="button"
+                    className="btn m-1 justify-start w-80 flex items-center text-gray-500"
+                >
+                    {filter === "all" ? "Filter timeline" : typeConfig[filter].label} <IoMdArrowDropdown />
+                </div>
+                <ul
+                    tabIndex="-1"
+                    className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm"
+                >
+                    <li>
+                        <a onClick={() => setFilter("message")}>Text</a>
+                    </li>
+                    <li>
+                        <a onClick={() => setFilter("call")}>Call</a>
+                    </li>
+                    <li>
+                        <a onClick={() => setFilter("video")}>Video</a>
+                    </li>
+                </ul>
+            </div>
+
             {/* call  */}
             <div className="space-y-3">
-                {timeline.map((item) => {
+                {filterTimeline.map((item) => {
                     const config = typeConfig[item.type];
                     return (
                         <div className="flex items-center gap-4 bg-white p-6 rounded-md shadow-sm">
@@ -25,7 +58,7 @@ const Timeline = () => {
                             <div>
                                 <h1 className="text-xl text-gray-600">
                                     <span className="font-semibold text-gray-800">
-                                        {config.label}{ " " }
+                                        {config.label}{" "}
                                     </span>
                                     with {item.name}
                                 </h1>
