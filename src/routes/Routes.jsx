@@ -28,6 +28,7 @@ export const router = createBrowserRouter([
         Component: Stats
       },
     ],
+    errorElement: <ErrorElement></ErrorElement>
   },
   
 ]);
