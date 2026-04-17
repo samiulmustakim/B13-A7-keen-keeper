@@ -43,8 +43,10 @@ const Navber = () => {
         </ul>
     );
     return (
-        <div className="shadow-sm bg-base-100 static">
-            <div className="navbar w-11/12 mx-auto ">
+        <div className="pb-18">
+            
+        <div className="shadow-sm bg-base-100 top-0 fixed w-full">
+            <div className="navbar w-11/12 mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div
@@ -84,6 +86,7 @@ const Navber = () => {
                 </div>
                 <div className="navbar-end hidden lg:flex">{navItem}</div>
             </div>
+        </div>
         </div>
     );
 };

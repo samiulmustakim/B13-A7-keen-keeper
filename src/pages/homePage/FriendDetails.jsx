@@ -9,6 +9,7 @@ import { PiChatCircleTextBold, PiPhoneCall } from "react-icons/pi";
 import { LuVideo } from "react-icons/lu";
 import { FriendContactContext } from "../../contextApi/FriendContactContext";
 import { useContext } from "react";
+import { toast } from "react-toastify";
 
 const FriendDetails = () => {
     const { id } = useParams();
@@ -34,12 +35,15 @@ const FriendDetails = () => {
     const { timeline, setTimeline } = useContext(FriendContactContext)
 
     const handleTimeLineCall = () => {
+        toast.success("📞 Call logged successfully!"),
         setTimeline([...timeline,{...expectedFriend, type: "call"}])
     }
     const handleTimeLineMessage = () => {
+        toast.success("💬 Message logged successfully!")
         setTimeline([...timeline, {...expectedFriend, type: "message"}])
     }
     const handleTimeLineVideo = () => { 
+        toast.success("🎥 Video call logged successfully!")
         setTimeline([...timeline, {...expectedFriend, type: "video"}])
     }
 

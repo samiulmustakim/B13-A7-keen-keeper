@@ -7,7 +7,7 @@ const Footer = () => {
     return (
         <footer className="bg-[#244d3f] text-white py-8 text-center">
             <div className="container mx-auto px-4">
-                <h1 className="font-bold pt-7 text-6xl">
+                <h1 className="font-bold pt-7 text-5xl sm:text-6xl">
                         Keen
                         <span className="font-semibold">
                             Keeper
