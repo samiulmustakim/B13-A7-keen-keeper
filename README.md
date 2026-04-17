@@ -1,16 +1,65 @@
-# React + Vite
+# 🚀 **KeenKeeper**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## ✨ **Description**
+KeenKeeper is a web application designed to help users nurture and maintain meaningful relationships with their close friends and connections. It provides an intuitive platform for tracking your interactions, setting relationship goals, and ensuring that you stay connected with people who matter most in your life.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🛠️ **Technologies Used**
 
-## React Compiler
+- **Frontend:**  
+  - React.js  
+  - React Router DOM  
+  - Tailwind CSS  
+  - DaisyUI
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Charts/Visualization:**  
+  - Recharts
 
-## Expanding the ESLint configuration
+- **Other Libraries:**  
+  - React Spinners  
+  - React Toastify  
+  - Vite (for bundling)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Development Tools:**  
+  - ESLint  
+  - Vite plugins
+
+---
+
+## 🌟 **Key Features**
+
+1. **Friend Management**  
+   Easily manage and categorize your friends, including their relationship status and the last interaction. Keep track of your connections in a visually appealing layout.
+
+2. **Interaction Tracker**  
+   Track your interactions with friends over time, set relationship goals, and ensure you stay connected at regular intervals to maintain strong bonds.
+
+3. **Quick Check-Ins**  
+   Log and keep a record of interactions such as calls, texts, or video chats with just one-click access for logging. Stay organized and always up to date!
+
+---
+
+## 📸 **Screenshots**
+
+### 🏠 **Home Page**  
+*Overview of your total friends, interaction statuses, and quick access to add new friends.*
+
+![Home Page](image1.png)
+
+### 👤 **Friend Profile**  
+*Detailed friend profile with options for tracking interaction, relationship goals, and contact preferences.*
+
+![Friend Profile](image2.png)
+
+### ⏳ **Timeline**  
+*View your past interactions with friends, including call, text, or video logs, and upcoming interactions.*
+
+![Timeline](image3.png)
+
+---
+
+## 📜 **License**  
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
